@@ -1,0 +1,223 @@
+package com.my.bookstore.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import com.my.bookstore.core.Book;
+import com.my.bookstore.core.BookList;
+
+public class BookStoreRestClient implements BookList {
+
+	
+	public void login(String userName,String emailId) throws Exception{
+		String url = "http://localhost:8080/bookstore-ws/rest/bookservice/login/"+userName+"/"+emailId;
+		String searchResult = callRestApi(url, "", "POST");
+		System.out.println(searchResult);
+	}
+	
+	public Book getBook(int bookid) throws Exception{
+		String url = "http://localhost:8080/bookstore-ws/rest/bookservice/getbook/"+bookid;
+		String searchResult = "["+callRestApi(url, "", "POST")+"]";
+		System.out.println(searchResult);
+		
+		JSONArray arr = new JSONArray(searchResult);
+		Book bm = new Book();
+		bm.setAuthor(arr.getJSONObject(0).getString("author"));
+		bm.setTitle(arr.getJSONObject(0).getString("title"));
+		bm.setPrice(String.valueOf(arr.getJSONObject(0).getString("price")));
+		bm.setAvailableStock(arr.getJSONObject(0).getInt("availableStock"));
+		bm.setBookId(Integer.valueOf(arr.getJSONObject(0).getInt("bookId")));
+		
+		return bm;
+	}
+ 
+	public List search(String searchTerm) throws JSONException {
+		String url = "http://localhost:8080/bookstore-ws/rest/bookservice/search/"
+				+ searchTerm;
+		List<Book> allBooksList = new ArrayList();
+		String searchResult = callRestApi(url, "", "POST");
+
+		// System.out.println("searchResult "+searchResult);
+
+		JSONArray arr = new JSONArray(searchResult);
+		for (int i = 0; i < arr.length(); i++) {
+
+			Book bm = new Book();
+			bm.setAuthor(arr.getJSONObject(i).getString("author"));
+			bm.setTitle(arr.getJSONObject(i).getString("title"));
+			bm.setPrice(String.valueOf(arr.getJSONObject(i).getString("price")));
+			bm.setAvailableStock(arr.getJSONObject(i).getInt("availableStock"));
+			bm.setBookId(Integer.valueOf(arr.getJSONObject(i).getInt("bookId")));
+			allBooksList.add(bm);
+
+		}
+
+		return allBooksList;
+	}
+	
+	public List showCart() throws Exception{
+		List<Book> allBooksList = new ArrayList();
+		String url = "http://localhost:8080/bookstore-ws/rest/bookservice/showcart";
+		String searchResult = callRestApi(url, "", "POST");
+		JSONArray arr = new JSONArray(searchResult);
+		for (int i = 0; i < arr.length(); i++) {
+			Book bm = new Book();
+			bm.setAuthor(arr.getJSONObject(i).getString("author"));
+			bm.setTitle(arr.getJSONObject(i).getString("title"));
+			bm.setPrice(String.valueOf(arr.getJSONObject(i).getString("price")));
+			bm.setAvailableStock(arr.getJSONObject(i).getInt("availableStock"));
+			bm.setBookId(Integer.valueOf(arr.getJSONObject(i).getInt("bookId")));
+			allBooksList.add(bm);
+		}
+		return allBooksList;
+	}
+
+	public List addBookToCart(int bookId, int count) throws Exception{
+		String url = "http://localhost:8080/bookstore-ws/rest/bookservice/addbooktocart/"+bookId+"/"+count;
+		String searchResult = callRestApi(url, "", "POST");
+		
+		
+		System.out.println(searchResult);
+		
+		List<Book> booksInCart = new ArrayList();
+		JSONArray arr = new JSONArray(searchResult);
+		for (int i = 0; i < arr.length(); i++) {
+
+			Book bm = new Book();
+			bm.setAuthor(arr.getJSONObject(i).getString("author"));
+			bm.setTitle(arr.getJSONObject(i).getString("title"));
+			bm.setPrice(String.valueOf(arr.getJSONObject(i).getString("price")));
+			bm.setAvailableStock(arr.getJSONObject(i).getInt("availableStock"));
+			bm.setBookId(Integer.valueOf(arr.getJSONObject(i).getInt("bookId")));
+			booksInCart.add(bm);
+
+		}
+
+		return booksInCart;
+	}
+
+	public List removeBookFromCart(int bookId, int count) {
+		return null;
+	}
+
+    public String buy(int iQty, String price) {
+        String url = "http://localhost:8080/bookstore-ws/rest/bookservice/buy/" + iQty + "/" + price;
+		String searchResult = callRestApi(url, "", "POST");
+		int qty=Integer.valueOf(iQty);
+		 NumberFormat format = NumberFormat.getInstance(Locale.UK);
+         Number number = format.parse(price);
+         double b = number.doubleValue();
+         
+         double totalPrice=qty*price;
+		System.out.println(searchResult);
+		return searchResult;
+	}
+
+	public List displayAll() throws Exception {
+		String url = "http://localhost:8080/bookstore-ws/rest/bookservice/displayall";
+		String searchResult = callRestApi(url, "", "");
+		// System.out.println(searchResult);
+		List<Book> allBooksList = new ArrayList();
+		JSONArray arr = new JSONArray(searchResult);
+		for (int i = 0; i < arr.length(); i++) {
+
+			Book bm = new Book();
+			bm.setAuthor(arr.getJSONObject(i).getString("author"));
+			bm.setTitle(arr.getJSONObject(i).getString("title"));
+			bm.setPrice(String.valueOf(arr.getJSONObject(i).getString("price")));
+			bm.setAvailableStock(arr.getJSONObject(i).getInt("availableStock"));
+			bm.setBookId(Integer.valueOf(arr.getJSONObject(i).getInt("bookId")));
+			allBooksList.add(bm);
+
+		}
+
+		return allBooksList;
+	}
+
+	public Book showBookdetails(String bookId) throws Exception {
+		Book book = new Book(Integer.valueOf(bookId));
+		List list = displayAll();
+		Iterator itr = list.iterator();
+		Book bookFromStock = null;
+		while (itr.hasNext()) {
+			bookFromStock = (Book) itr.next();
+			if (bookFromStock.equals(book)) {
+				break;
+			}
+		}
+		return bookFromStock;
+	}
+	
+	
+	
+	public String callRestApi(String strUrl,String input,String method){
+		String output="";
+		try {
+			URL url = new URL(strUrl);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			//conn.setRequestProperty("Content-Type", "text/plain");
+			conn.setDoOutput(true);
+			if(!method.isEmpty()){
+				conn.setRequestMethod(method);
+			}
+			if(input!=null && !input.isEmpty()){
+				OutputStream os = conn.getOutputStream();
+				os.write(input.getBytes());
+				os.flush();
+			}
+			if (conn.getResponseCode() != HttpsURLConnection.HTTP_OK) {
+				throw new RuntimeException("Failed : HTTP error code : "
+					+ conn.getResponseCode());
+			}else{
+				//System.out.println("Response Code : "+conn.getResponseCode());
+			}
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					(conn.getInputStream())));
+			while ((output = br.readLine()) != null) {				
+				break;
+			}
+
+			conn.disconnect();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return output;
+	}
+
+	@Override
+	public Book[] list(String searchString) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean add(Book book, int quantity) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int[] buy(List books) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

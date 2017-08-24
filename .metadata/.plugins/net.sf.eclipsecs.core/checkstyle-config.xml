@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle-configurations file-format-version="5.0.0" default-check-configuration="VCC">
+  <check-configuration name="VCC" location="vcc_checkstyle_config.xml" type="internal" description="VCC Checkstyle configuration"/>
+</checkstyle-configurations>

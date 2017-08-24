@@ -1,0 +1,130 @@
+package com.my.bookstore.main;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.text.NumberFormat;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+
+import com.my.bookstore.client.BookStoreRestClient;
+import com.my.bookstore.core.Book;
+
+public class BookStoreMain {
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BookStoreRestClient client = new BookStoreRestClient();
+		BookStoreMain mainObj = new BookStoreMain();
+		mainObj.login(br, client);
+		mainObj.displayAvailableBooksOrSearch(br, client);
+
+	}
+
+	private void login(BufferedReader br, BookStoreRestClient client)
+			throws Exception {
+
+		System.out.println("Enter your name \n");
+		String userName = br.readLine();
+		System.out.println("Enter your emailid \n");
+		String emailId = br.readLine();
+		client.login(userName, emailId);
+	}
+
+	private void displayAvailableBooksOrSearch(BufferedReader br,
+			BookStoreRestClient client) throws Exception {
+
+		System.out.println("Type 1 to display all books ");
+		System.out.println("Type 2 to Search the books \n");
+		String s = br.readLine();
+		int option = Integer.parseInt(s);
+		if (option == 1) {
+			displayAll(br, client);
+
+		} else if (option == 2) {
+
+		} else {
+			System.out.println("Logging out...Please login once again");
+		}
+	}
+
+	private void displayAll(BufferedReader br, BookStoreRestClient client)
+			throws Exception {
+		List list = client.displayAll();
+		Iterator itr = list.iterator();
+		Book book = null;
+		System.out.println("**************Available Books************");
+		while (itr.hasNext()) {
+			book = (Book) itr.next();
+			System.out.println(book.getBookId() + "." + book.getTitle() + " "
+					+ book.getAuthor());
+		}
+		System.out.println("Please choose one book by entering serial.no");
+		String s = br.readLine();
+		Book getBookDetails = client.getBook(Integer.parseInt(s));
+		displayBookDetails(getBookDetails, br, client);
+	}
+	
+	private void displayBookDetails(Book book,BufferedReader br, BookStoreRestClient client) throws Exception{
+		 System.out.println("****************************************");
+         System.out.println("Book Name::" + book.getTitle());
+         System.out.println("Book Author::" + book.getAuthor());
+
+         System.out.println("Book Price::" + book.getPrice());
+         System.out.println("Avalible Qunatity::" + book.getAvailableStock());
+         System.out.println("****************************************");
+         System.out.print("Please Enter how many quantity you wish to buy\n ");
+         String qty = br.readLine();
+         int iQty = Integer.parseInt(qty);
+         addBookToCart(book , iQty, br, client);
+         
+	}
+	
+	private void addBookToCart(Book book,int count,BufferedReader br, BookStoreRestClient client) throws Exception{
+		List cartList = client.addBookToCart(book.getBookId(), count);
+		Iterator itr = cartList.iterator();
+		System.out.println("************Books available in your cart*********");
+		while(itr.hasNext()){
+			Book cartBook = (Book)itr.next();
+			System.out.println(cartBook.getBookId()+" "+cartBook.getTitle()+" "+cartBook.getPrice() +" "+cartBook.getAvailableStock());
+		}
+		System.out.print("Please enter 1 to buy..\n ");
+		System.out.print("Please enter 2 to remove this book from cart..");
+		System.out.print("Please enter 3 to purchase more..");
+		String choice = br.readLine();
+		if(choice.equals("1")){
+			
+		}else if(choice.equals("2")){
+			removeBookFromCart(book, count, br, client);
+		}else if(choice.equals("3")){
+			displayAvailableBooksOrSearch(br, client);
+		}
+		
+	}
+	
+	private void removeBookFromCart(Book book,int count,BufferedReader br, BookStoreRestClient client) throws Exception{
+		List cartList = client.removeBookFromCart(book.getBookId(), count);
+		System.out.print("Please enter 1 to buy..\n ");
+ 		System.out.print("Please enter 2 to purchase more..");
+		String choice = br.readLine();
+		if(choice.equals("1")){
+			buy(br, client);
+		}else if(choice.equals("2")){
+			displayAvailableBooksOrSearch(br, client);
+		}
+	}
+	
+	private void buy(BufferedReader br, BookStoreRestClient client) throws Exception{
+		String response = client.buy();
+		System.out.print("Please enter 1 to purchase more....\n ");
+ 		System.out.print("Please enter 2 to quit..");
+		String choice = br.readLine();
+		if(choice.equals("1")){
+			displayAvailableBooksOrSearch(br, client);
+		}else if(choice.equals("2")){
+			System.exit(0);
+		}
+			
+	}
+	
+}

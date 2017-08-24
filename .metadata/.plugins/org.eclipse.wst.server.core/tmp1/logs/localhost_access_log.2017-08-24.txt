@@ -1,0 +1,2 @@
+127.0.0.1 - - [24/Aug/2017:23:21:03 +0200] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [24/Aug/2017:23:21:34 +0200] "POST /bookstore-ws/rest/bookservice/login/ss/ss@gmail.com HTTP/1.1" 200 17

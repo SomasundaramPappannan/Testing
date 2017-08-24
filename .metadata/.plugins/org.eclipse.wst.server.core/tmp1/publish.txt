@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Aug 24 23:20:45 CEST 2017
+org.eclipse.jst.j2ee.server\:bookstore-core=WEB-INF/lib/bookstore-core.jar
+org.eclipse.jst.j2ee.server\:bookstore-client=WEB-INF/lib/bookstore-client.jar

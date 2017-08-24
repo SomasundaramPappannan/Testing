@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><libraryInfos>
+<libraryInfo home="C:\JavaDev\tools\java" version="1.8.0">
+<bootpath>
+<entry path="C:\JavaDev\tools\java\jre\bin\compressedrefs\jclSC180\vm.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\se-service.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\math.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\jlm.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmorb.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmorbapi.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmcfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmpkcs.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmcertpathfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjgssfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjssefw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmsaslfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjcefw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjgssprovider.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjsseprovider2.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmcertpathprovider.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\xmldsigfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\xml.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\charsets.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\resources.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\rt.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\dataaccess.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmgpu.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\JavaDev\tools\java\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\JavaDev\tools\java\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\JavaDev\tools\java\jre" version="1.8.0">
+<bootpath>
+<entry path="C:\JavaDev\tools\java\jre\bin\compressedrefs\jclSC180\vm.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\se-service.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\math.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\jlm.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmorb.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmorbapi.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmcfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmpkcs.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmcertpathfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjgssfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjssefw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmsaslfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjcefw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjgssprovider.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmjsseprovider2.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmcertpathprovider.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\xmldsigfw.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\xml.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\charsets.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\resources.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\rt.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\dataaccess.jar"/>
+<entry path="C:\JavaDev\tools\java\jre\lib\ibmgpu.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\JavaDev\tools\java\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\JavaDev\tools\java\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\JavaDev\tools\websphere-8.0\java" version="1.6.0">
+<bootpath>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\bin\default\jclSC160\vm.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\annotation.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\beans.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\java.util.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\jndi.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\logging.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\security.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\sql.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmorb.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmorbapi.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmcfw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\rt.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\charsets.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\resources.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmpkcs.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmcertpathfw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjgssfw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjssefw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmsaslfw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjcefw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjgssprovider.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjsseprovider2.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmcertpathprovider.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\management-agent.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\xml.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\jlm.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\javascript.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\JavaDev\tools\websphere-8.0\java\jre" version="1.6.0">
+<bootpath>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\bin\default\jclSC160\vm.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\annotation.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\beans.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\java.util.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\jndi.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\logging.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\security.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\sql.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmorb.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmorbapi.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmcfw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\rt.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\charsets.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\resources.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmpkcs.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmcertpathfw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjgssfw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjssefw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmsaslfw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjcefw.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjgssprovider.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmjsseprovider2.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ibmcertpathprovider.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\management-agent.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\xml.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\jlm.jar"/>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\javascript.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\JavaDev\tools\websphere-8.0\java\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

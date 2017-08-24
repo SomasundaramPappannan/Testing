@@ -1,0 +1,4 @@
+PublishInclusionList=*.class, *.xml, *.xmi, *.wsdl, *.jar, *.mf, *.xsd, *.composite, *.componentType, *.bp, *.properties
+eclipse.preferences.version=1
+isSecurityUseHttps=true
+isUseIBMSSLSocketFactory=false
